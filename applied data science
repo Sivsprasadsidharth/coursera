@@ -1,0 +1,239 @@
+echo "# coursera" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/sajana-github/coursera.git
+git push -u origin master
+import pandas as pd
+
+import numpy as np
+
+from matplotlib import pyplot as plt
+
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+ 
+
+h_w = pd.read_csv(r"C:\Users\klu\Desktop\ML-PROJECTS\PR-1-Linear Regression\Height_Weight.csv")
+
+h_w
+
+ 
+
+h_w.info()
+
+h_w.columns
+
+h_w.drop(['Unnamed: 0'], axis =1, inplace =True)
+
+h_w
+
+h_w.head()
+
+ 
+
+import seaborn as sns
+
+sns.distplot(h_w.Weight)
+
+sns.distplot(h_w.Height)
+
+ 
+
+ 
+
+sns.pairplot(h_w, x_vars = 'Weight', y_vars= 'Height', height = 7, aspect = 0.7, kind = 'reg')
+
+ 
+
+ 
+
+h_w.Height.corr(h_w.Weight)  
+
+ 
+
+h_w.corr()
+
+sns.heatmap(h_w.corr(), annot=True)
+
+ 
+
+x = h_w[['Height']]
+
+x.head()
+
+print(type(x))
+
+print(x.shape)
+
+y=h_w.Weight
+
+print(y)
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train,y_test = train_test_split(x,y,random_state =1)
+
+print(x_train.shape)
+
+print(x_test.shape)
+
+print(y_train.shape)
+
+print(y_train.shape)
+
+from sklearn.linear_model import LinearRegression
+
+linearreg = LinearRegression()
+
+linearreg.fit(x_train, y_train)
+
+ 
+
+print(linearreg.intercept_)
+
+print(linearreg.coef_)
+
+ 
+
+ 
+
+y_pred = linearreg.predict(x_test)
+
+y_pred
+
+#y_pred.head()                               # look error carefully
+
+ 
+
+ 
+
+y_pred.head[1  :  5]
+
+ 
+
+from sklearn import metrics
+
+print(metrics.mean_absolute_error(true,pred))
+
+ 
+
+ 
+
+ import pandas as pd
+
+import numpy as np
+
+from matplotlib import pyplot as plt
+
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+ 
+
+h_w = pd.read_csv(r"C:\Users\klu\Desktop\ML-PROJECTS\PR-1-Linear Regression\Height_Weight.csv")
+
+h_w
+
+ 
+
+h_w.info()
+
+h_w.columns
+
+h_w.drop(['Unnamed: 0'], axis =1, inplace =True)
+
+h_w
+
+h_w.head()
+
+ 
+
+import seaborn as sns
+
+sns.distplot(h_w.Weight)
+
+sns.distplot(h_w.Height)
+
+ 
+
+ 
+
+sns.pairplot(h_w, x_vars = 'Weight', y_vars= 'Height', height = 7, aspect = 0.7, kind = 'reg')
+
+ 
+
+ 
+
+h_w.Height.corr(h_w.Weight)  
+
+ 
+
+h_w.corr()
+
+sns.heatmap(h_w.corr(), annot=True)
+
+ 
+
+x = h_w[['Height']]
+
+x.head()
+
+print(type(x))
+
+print(x.shape)
+
+y=h_w.Weight
+
+print(y)
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train,y_test = train_test_split(x,y,random_state =1)
+
+print(x_train.shape)
+
+print(x_test.shape)
+
+print(y_train.shape)
+
+print(y_train.shape)
+
+from sklearn.linear_model import LinearRegression
+
+linearreg = LinearRegression()
+
+linearreg.fit(x_train, y_train)
+
+ 
+
+print(linearreg.intercept_)
+
+print(linearreg.coef_)
+
+ 
+
+ 
+
+y_pred = linearreg.predict(x_test)
+
+y_pred
+
+#y_pred.head()                               # look error carefully
+
+ 
+
+ 
+
+y_pred.head[1  :  5]
+
+ 
+
+from sklearn import metrics
+
+print(metrics.mean_absolute_error(true,pred))
+
+ 
+
+ 
+
+           
